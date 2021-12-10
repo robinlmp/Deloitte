@@ -9,7 +9,7 @@
 import UIKit
 
 
-protocol BuyCellButtonTapped: class {
+protocol BuyCellButtonTapped: AnyObject {
     func addProductToBasket(_ sender: SavedViewTableViewCell)
 }
 

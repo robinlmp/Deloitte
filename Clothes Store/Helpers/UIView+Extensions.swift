@@ -74,3 +74,28 @@ extension UIAlertController{
         controller.present(alert, animated: true)
     }
 }
+
+
+extension UIImage {
+    enum ImageTitle: String {
+        case placeHolder = "photo.placeholder"
+        case photo = "ohoto"
+    }
+    
+    convenience init(imageTitle: ImageTitle) {
+        self.init(named: imageTitle.rawValue)!
+    }
+}
+
+@available(iOS 13.0, *)
+extension UIImage {
+    enum SFSymbol: String {
+//        add SFSymbol cases here
+        case cart = "cart"
+    }
+    
+    convenience init(symbol: SFSymbol) {
+        self.init(systemName: symbol.rawValue)!
+    }
+}
+

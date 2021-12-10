@@ -46,7 +46,7 @@ class ProductDetailTableViewController: UITableViewController {
             productInStock.text = "Out of Stock"
         }
         
-        let placeHolderImage = UIImage(named: "placeholderImage")
+        let placeHolderImage = UIImage(imageTitle: .placeHolder)
         
         if let imageURL = URL(string: product?.image ?? "") {
             productImageView.af.setImage(withURL:  imageURL,

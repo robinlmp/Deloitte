@@ -22,7 +22,7 @@ class CatalogueViewCollectionViewCell: UICollectionViewCell {
         self.productName.text = product.name
         self.productPrice.text = CurrencyHelper.getMoneyString(product.price ?? 0)
         self.cellView.dropShadow(radius: 10, opacity: 0.1, color: .black)
-        let placeHolderImage = UIImage(named: "placeholderImage")
+        let placeHolderImage = UIImage(imageTitle: .placeHolder)
         
         if let imageURL = URL(string: product.image ?? "") {
             productImage.af.setImage(withURL:  imageURL,
