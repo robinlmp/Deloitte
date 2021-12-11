@@ -39,6 +39,5 @@ class DataService {
             }
             
         }.resume()
-        
     }
 }
