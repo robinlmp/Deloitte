@@ -22,4 +22,8 @@ extension UIColor{
     class var pressedColour: UIColor{
         return #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     }
+    
+    class var pressedColourForWhite: UIColor{
+        return #colorLiteral(red: 0.9215686275, green: 0.9215686275, blue: 0.9215686275, alpha: 1)
+    }
 }
