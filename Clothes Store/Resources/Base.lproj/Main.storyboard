@@ -469,16 +469,13 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKW-6u-Z9m">
-                                            <rect key="frame" x="21" y="15" width="170" height="21.5"/>
+                                            <rect key="frame" x="21" y="15" width="170" height="22"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                             <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Added" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmC-A6-sNo">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmC-A6-sNo">
                                             <rect key="frame" x="223" y="15" width="170" height="22"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="56" id="Fe2-ql-om0"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                             <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
@@ -532,6 +529,7 @@
                                         <constraint firstItem="MmC-A6-sNo" firstAttribute="centerX" secondItem="U8t-Md-K2h" secondAttribute="centerX" id="ASc-2B-9ZU"/>
                                         <constraint firstItem="U8t-Md-K2h" firstAttribute="leading" secondItem="ku2-yy-Psc" secondAttribute="trailing" constant="32" id="Une-4o-aef"/>
                                         <constraint firstItem="MmC-A6-sNo" firstAttribute="top" secondItem="U8t-Md-K2h" secondAttribute="top" id="bEw-wT-x5y"/>
+                                        <constraint firstItem="MmC-A6-sNo" firstAttribute="width" secondItem="U8t-Md-K2h" secondAttribute="width" id="eky-Rx-aWu"/>
                                         <constraint firstItem="ku2-yy-Psc" firstAttribute="width" secondItem="U8t-Md-K2h" secondAttribute="width" id="kUi-ba-aTa"/>
                                         <constraint firstItem="pKW-6u-Z9m" firstAttribute="width" secondItem="ku2-yy-Psc" secondAttribute="width" id="pyV-RN-NMg"/>
                                         <constraint firstAttribute="trailing" secondItem="U8t-Md-K2h" secondAttribute="trailing" constant="21" id="tvF-95-nai"/>
@@ -750,8 +748,8 @@
     <resources>
         <image name="cart" width="15" height="13"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
-        <image name="heart.circle" width="13" height="13"/>
         <image name="heart.circle" catalog="system" width="128" height="121"/>
+        <image name="heart.circle" width="13" height="13"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="photo.placeholder" width="2481" height="2481"/>
