@@ -9,7 +9,7 @@
 import UIKit
 
 
-class BasketViewController: UITableViewController, UITableViewDataSource {
+class BasketViewController: UIViewController, UITableViewDataSource {
     
     //Views
     @IBOutlet var tableView: UITableView!
@@ -18,25 +18,17 @@ class BasketViewController: UITableViewController, UITableViewDataSource {
     @IBOutlet var checkoutButton: UIButton!
     
     //Variables
-    var productsArray: [Product] = Basket.items.map( { $0.product } )
+    var productsArray: [Product] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if Basket.items.count == 0 {
-//            tableView.isHidden = true
-//            noProductsLabel.isHidden = false
-//        } else {
-//            tableView.isHidden = false
-//            noProductsLabel.isHidden = true
-//        }
-        
         tableView.dataSource = self
         tableView.delegate = self
         
+        productsArray = Basket.items.map( { $0.product } )
 
         checkoutButton.dropShadow(radius: 8, opacity: 0.4, color: UIColor.primaryColour)
-        
         
         
         print(Basket.items.description)
@@ -63,14 +55,14 @@ extension BasketViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return productsArray.count
+        return Basket.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "basketCell") as? BasketViewTableViewCell
         {
-            cell.configureWithProduct(product: productsArray[indexPath.row])
+            cell.configureWithProduct(product: Basket.items[indexPath.row].product)
             
             return cell
         }

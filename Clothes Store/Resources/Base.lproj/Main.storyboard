@@ -299,6 +299,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add products to your 'Basket'" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="op2-Ej-9WO">
+                                <rect key="frame" x="20" y="199" width="374" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DDt-kl-ciL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="737"/>
                                 <color key="backgroundColor" white="0.9511183647" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -364,13 +371,6 @@
                                     <outlet property="delegate" destination="uf9-9a-5EI" id="bLF-yX-OdD"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add products to your 'Basket'" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="op2-Ej-9WO">
-                                <rect key="frame" x="20" y="199" width="374" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMp-IN-XHa">
                                 <rect key="frame" x="0.0" y="737" width="414" height="76"/>
                                 <subviews>
@@ -439,6 +439,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Basket" id="aqU-l3-z5c"/>
                     <connections>
+                        <outlet property="TableView" destination="DDt-kl-ciL" id="rS8-ZO-4Oq"/>
                         <outlet property="checkoutButton" destination="9OA-t4-qhZ" id="MGq-mb-YKa"/>
                         <outlet property="noProductsLabel" destination="op2-Ej-9WO" id="Av4-G0-Ypa"/>
                         <outlet property="tableView" destination="DDt-kl-ciL" id="U9y-FX-eOm"/>
