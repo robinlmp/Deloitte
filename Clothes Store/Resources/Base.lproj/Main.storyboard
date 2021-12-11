@@ -361,6 +361,7 @@
                                         <inset key="separatorInset" minX="125" minY="0.0" maxX="20" maxY="0.0"/>
                                         <connections>
                                             <outlet property="cellView" destination="mrR-dH-anG" id="0AR-Vu-9Ou"/>
+                                            <outlet property="productImage" destination="mv2-rt-ePM" id="aen-cK-Ylw"/>
                                             <outlet property="productName" destination="8TD-Fv-JGk" id="O5t-rz-iWR"/>
                                             <outlet property="productPrice" destination="f51-Ga-z5y" id="m18-lw-wcM"/>
                                             <outlet property="quantity" destination="40C-Ll-zNw" id="Nj9-RG-17T"/>
@@ -750,8 +751,8 @@
     <resources>
         <image name="cart" width="15" height="13"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
-        <image name="heart.circle" catalog="system" width="128" height="121"/>
         <image name="heart.circle" width="13" height="13"/>
+        <image name="heart.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="photo.placeholder" width="2481" height="2481"/>

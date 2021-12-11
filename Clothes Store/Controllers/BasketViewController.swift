@@ -23,6 +23,8 @@ class BasketViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.reloadData()
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -32,6 +34,7 @@ class BasketViewController: UIViewController, UITableViewDataSource {
         
         
         print(Basket.items.description)
+        
  
     }
     
@@ -55,7 +58,7 @@ extension BasketViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return Basket.items.count
+        return productsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,8 +87,11 @@ func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-
+        
         let deleteAction = UIContextualAction.init(style:.destructive, title: "Remove", handler: { (action, view, completion) in
+            
+            self.productsArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
 
             Haptic.feedBack()
         })

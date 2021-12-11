@@ -29,7 +29,7 @@ class WishlistViewController: UIViewController, BuyCellButtonTapped {
     // MARK: - Actions
     func addProductToBasket(_ sender: SavedViewTableViewCell) {
         Haptic.feedBack()
-
+        
     }
 }
 
