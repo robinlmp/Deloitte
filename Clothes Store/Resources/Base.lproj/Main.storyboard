@@ -468,27 +468,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8t-Md-K2h">
-                                            <rect key="frame" x="223" y="15" width="170" height="44"/>
-                                            <color key="backgroundColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="44" id="0DW-YO-096"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
-                                            <state key="normal" title="ADD TO CART">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusMe">
-                                                    <real key="value" value="22"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                            <connections>
-                                                <action selector="addToCartAction:" destination="90F-ml-7RE" eventType="touchUpInside" id="aRP-qr-daO"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKW-6u-Z9m">
-                                            <rect key="frame" x="21" y="-26.5" width="170" height="21.5"/>
+                                            <rect key="frame" x="21" y="15" width="170" height="21.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                            <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Added" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmC-A6-sNo">
+                                            <rect key="frame" x="223" y="15" width="170" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="56" id="Fe2-ql-om0"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                             <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
@@ -513,14 +503,35 @@
                                                 <action selector="addToWishListAction:" destination="90F-ml-7RE" eventType="touchUpInside" id="XxJ-il-vPd"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8t-Md-K2h">
+                                            <rect key="frame" x="223" y="15" width="170" height="44"/>
+                                            <color key="backgroundColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="0DW-YO-096"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                            <state key="normal" title="ADD TO CART">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusMe">
+                                                    <real key="value" value="22"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="addToCartAction:" destination="90F-ml-7RE" eventType="touchUpInside" id="aRP-qr-daO"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ku2-yy-Psc" firstAttribute="leading" secondItem="8DN-6y-neo" secondAttribute="leading" constant="21" id="1Gp-oP-G3v"/>
                                         <constraint firstItem="pKW-6u-Z9m" firstAttribute="centerX" secondItem="ku2-yy-Psc" secondAttribute="centerX" id="1xK-CV-byY"/>
                                         <constraint firstItem="ku2-yy-Psc" firstAttribute="top" secondItem="8DN-6y-neo" secondAttribute="top" constant="15" id="5h6-De-kw1"/>
-                                        <constraint firstItem="pKW-6u-Z9m" firstAttribute="bottom" secondItem="ku2-yy-Psc" secondAttribute="top" constant="-20" id="6NW-un-d9g"/>
+                                        <constraint firstItem="pKW-6u-Z9m" firstAttribute="top" secondItem="ku2-yy-Psc" secondAttribute="top" id="6NW-un-d9g"/>
                                         <constraint firstItem="U8t-Md-K2h" firstAttribute="centerY" secondItem="ku2-yy-Psc" secondAttribute="centerY" id="9Yd-nq-sW4"/>
+                                        <constraint firstItem="MmC-A6-sNo" firstAttribute="centerX" secondItem="U8t-Md-K2h" secondAttribute="centerX" id="ASc-2B-9ZU"/>
                                         <constraint firstItem="U8t-Md-K2h" firstAttribute="leading" secondItem="ku2-yy-Psc" secondAttribute="trailing" constant="32" id="Une-4o-aef"/>
+                                        <constraint firstItem="MmC-A6-sNo" firstAttribute="top" secondItem="U8t-Md-K2h" secondAttribute="top" id="bEw-wT-x5y"/>
                                         <constraint firstItem="ku2-yy-Psc" firstAttribute="width" secondItem="U8t-Md-K2h" secondAttribute="width" id="kUi-ba-aTa"/>
                                         <constraint firstItem="pKW-6u-Z9m" firstAttribute="width" secondItem="ku2-yy-Psc" secondAttribute="width" id="pyV-RN-NMg"/>
                                         <constraint firstAttribute="trailing" secondItem="U8t-Md-K2h" secondAttribute="trailing" constant="21" id="tvF-95-nai"/>
@@ -532,12 +543,6 @@
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmC-A6-sNo">
-                                <rect key="frame" x="223" y="755.5" width="170" height="21.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JBY-tz-uUq"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -545,13 +550,10 @@
                             <constraint firstItem="rzB-j9-k51" firstAttribute="trailing" secondItem="JBY-tz-uUq" secondAttribute="trailing" id="04p-Bo-1wz"/>
                             <constraint firstItem="OAW-iX-F9c" firstAttribute="trailing" secondItem="JBY-tz-uUq" secondAttribute="trailing" id="7Zz-nz-Bcf"/>
                             <constraint firstItem="rzB-j9-k51" firstAttribute="top" secondItem="JBY-tz-uUq" secondAttribute="top" id="GFf-7U-3kn"/>
-                            <constraint firstItem="MmC-A6-sNo" firstAttribute="centerX" secondItem="U8t-Md-K2h" secondAttribute="centerX" id="MCO-Zn-1gq"/>
                             <constraint firstAttribute="bottom" secondItem="OAW-iX-F9c" secondAttribute="bottom" id="dMn-gl-gqE"/>
                             <constraint firstItem="OAW-iX-F9c" firstAttribute="leading" secondItem="JBY-tz-uUq" secondAttribute="leading" id="hk9-3E-oLb"/>
                             <constraint firstItem="OAW-iX-F9c" firstAttribute="top" secondItem="rzB-j9-k51" secondAttribute="bottom" id="i9T-yk-LiJ"/>
                             <constraint firstItem="rzB-j9-k51" firstAttribute="leading" secondItem="JBY-tz-uUq" secondAttribute="leading" id="iGS-Pb-Kbj"/>
-                            <constraint firstItem="MmC-A6-sNo" firstAttribute="width" secondItem="U8t-Md-K2h" secondAttribute="width" id="oxb-VT-6eF"/>
-                            <constraint firstItem="MmC-A6-sNo" firstAttribute="bottom" secondItem="U8t-Md-K2h" secondAttribute="top" constant="-20" id="pnx-jo-dbi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Product detail" largeTitleDisplayMode="never" id="iuH-Jq-tyd">
@@ -748,8 +750,8 @@
     <resources>
         <image name="cart" width="15" height="13"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
-        <image name="heart.circle" catalog="system" width="128" height="121"/>
         <image name="heart.circle" width="13" height="13"/>
+        <image name="heart.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="photo.placeholder" width="2481" height="2481"/>

@@ -75,12 +75,13 @@ class DetailViewContainerViewController: UIViewController {
         button.dropShadow(radius: 0, opacity: 0, color: .clear)
         button.backgroundColor = pressedColour
         label.isHidden = false
+        AnimateMe.animateLabel(label)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             button.dropShadow(radius: 8, opacity: shadowOpacity, color: shadowColour)
             button.backgroundColor = buttonBackground
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                 label.isHidden = true
                 
             }
