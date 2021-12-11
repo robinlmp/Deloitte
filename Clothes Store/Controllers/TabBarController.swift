@@ -13,6 +13,9 @@ class TabBarController: UITabBarController {
     var tabItem : UITabBarItem?
 
     //Variables
+    
+    var wishListCount = 4
+    var basketCount = Basket.items.count
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +27,11 @@ class TabBarController: UITabBarController {
 
         if let tabItems = tabBar.items {
             // In this case we want to modify the badge number of the third tab:
+            tabItem = tabItems[1]
+            tabItem?.badgeValue = String(wishListCount)
+            
             tabItem = tabItems[2]
+            tabItem?.badgeValue = String(basketCount)
         }
 
     }

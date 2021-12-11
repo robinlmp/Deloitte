@@ -79,7 +79,7 @@ extension UIAlertController{
 extension UIImage {
     enum ImageTitle: String {
         case placeHolder = "photo.placeholder"
-        case photo = "ohoto"
+
     }
     
     convenience init(imageTitle: ImageTitle) {
@@ -87,28 +87,51 @@ extension UIImage {
     }
 }
 
-@available(iOS 13.0, *)
-extension UIImage {
-    enum SFSymbol: String {
-//        add SFSymbol cases here
-        case cart = "cart"
-    }
-    
-    convenience init(symbol: SFSymbol) {
-        self.init(systemName: symbol.rawValue)!
-    }
-}
-
 extension UIImageView {
     func load(url: URL) {
+
         DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                guard let data = data else { return }
+                
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.image = image
                     }
                 }
+            }.resume()
+
+        }
+    }
+}
+
+extension UIButton {
+    func buttonPress(label: UILabel? = nil, pressedColour: UIColor) {
+        
+        guard let buttonBackground = self.backgroundColor else { return }
+        guard let shadowColourCG = self.layer.shadowColor else { return }
+        let shadowColour = UIColor(cgColor: shadowColourCG)
+        let shadowOpacity = self.layer.shadowOpacity
+
+        self.dropShadow(radius: 0, opacity: 0, color: .clear)
+        self.backgroundColor = pressedColour
+        
+        if let label = label {
+            label.isHidden = false
+            AnimateMe.animateLabel(label)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.dropShadow(radius: 8, opacity: shadowOpacity, color: shadowColour)
+            self.backgroundColor = buttonBackground
+            
+            if let label = label {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    label.isHidden = true
+                    
+                }
             }
+            
         }
     }
 }

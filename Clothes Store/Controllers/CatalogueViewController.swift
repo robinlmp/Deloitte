@@ -34,7 +34,7 @@ class CatalogueViewController: UIViewController {
                 }))
 
                 self.present(alert, animated: true, completion: nil)
-            }else{
+            } else {
 
                 self.products = products?.products ?? []
                 self.activity.isHidden = true

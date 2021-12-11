@@ -35,8 +35,7 @@ class CatalogueViewCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
-//        productImage.af.cancelImageRequest()
+
         productImage.image = nil
     }
 }

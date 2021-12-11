@@ -11,20 +11,25 @@ import UIKit
 class BasketViewTableViewCell: UITableViewCell{
 
     //Views
-    @IBOutlet var cellView: UIView!
-    @IBOutlet var productName: UILabel!
-    @IBOutlet var productPrice: UILabel!
-    @IBOutlet var quantity: UILabel!
+    @IBOutlet var cellView: UIView?
+    @IBOutlet var productName: UILabel?
+    @IBOutlet var productPrice: UILabel?
+    @IBOutlet var quantity: UILabel?
+    
     
     //Variables
     weak var delegate : BuyCellButtonTapped?
 
     func configureWithProduct(product: Product){
+        
+        print(product.name)
+        print(product.price)
+        print(product.stock)
 
-        self.productName.text = product.name
-        self.productPrice.text = CurrencyHelper.getMoneyString(product.price ?? 0)
-        self.cellView.dropShadow(radius: 10, opacity: 0.1, color: .black)
-        self.quantity.text = "Qty: \(product.stock ?? 1)"
+        self.productName?.text = product.name
+        self.productPrice?.text = CurrencyHelper.getMoneyString(product.price ?? 0)
+        self.cellView?.dropShadow(radius: 10, opacity: 0.1, color: .black)
+        self.quantity?.text = "Qty: \(product.stock ?? 1)"
 
     }
 }

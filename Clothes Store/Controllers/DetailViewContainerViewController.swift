@@ -56,36 +56,21 @@ class DetailViewContainerViewController: UIViewController {
     @IBAction func addToCartAction(_ sender: Any) {
         Haptic.feedBack()
         
-        buttonPress(button: addToCartButton, label: addedToBasketLabel, pressedColour: .pressedColour)
+        addToCartButton.buttonPress(label: addedToBasketLabel, pressedColour: .pressedColour)
+        
+        Basket.items.append(BasketItem(product: product))
+        
+        print(Basket.items.count)
     }
 
     @IBAction func addToWishListAction(_ sender: Any) {
         Haptic.feedBack()
         
-        buttonPress(button: wishListButton, label: addedToWishlistLabel, pressedColour: .pressedColourForWhite)
+        wishListButton.buttonPress(label: addedToWishlistLabel, pressedColour: .pressedColourForWhite)
+        
+        
     }
         
     
-    func buttonPress(button: UIButton, label: UILabel, pressedColour: UIColor) {
-        
-        guard let buttonBackground = button.backgroundColor else { return }
-        guard let shadowColourCG = button.layer.shadowColor else { return }
-        let shadowColour = UIColor(cgColor: shadowColourCG)
-        let shadowOpacity = button.layer.shadowOpacity
 
-        button.dropShadow(radius: 0, opacity: 0, color: .clear)
-        button.backgroundColor = pressedColour
-        label.isHidden = false
-        AnimateMe.animateLabel(label)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            button.dropShadow(radius: 8, opacity: shadowOpacity, color: shadowColour)
-            button.backgroundColor = buttonBackground
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                label.isHidden = true
-                
-            }
-        }
-    }
 }

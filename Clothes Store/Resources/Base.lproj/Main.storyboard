@@ -383,7 +383,7 @@
                                         <color key="textColor" white="0.22207655539863008" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OA-t4-qhZ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OA-t4-qhZ">
                                         <rect key="frame" x="21" y="16" width="170" height="44"/>
                                         <color key="backgroundColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -400,10 +400,11 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="addToCartAction:" destination="90F-ml-7RE" eventType="touchUpInside" id="Zlo-E3-5gn"/>
+                                            <action selector="checkoutButton:" destination="uf9-9a-5EI" eventType="touchUpInside" id="ION-hi-TAr"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFo-fY-mfD">
-                                        <rect key="frame" x="223" y="48" width="170" height="16.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFo-fY-mfD">
+                                        <rect key="frame" x="223" y="30" width="170" height="16.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -418,8 +419,8 @@
                                     <constraint firstItem="5zp-Oq-DD2" firstAttribute="leading" secondItem="9OA-t4-qhZ" secondAttribute="trailing" constant="32" id="WTx-jb-vI2"/>
                                     <constraint firstItem="nFo-fY-mfD" firstAttribute="centerX" secondItem="5zp-Oq-DD2" secondAttribute="centerX" id="ZRF-Zd-2Q4"/>
                                     <constraint firstItem="5zp-Oq-DD2" firstAttribute="top" secondItem="dMp-IN-XHa" secondAttribute="top" constant="10" id="efj-eo-Jbu"/>
-                                    <constraint firstItem="nFo-fY-mfD" firstAttribute="top" secondItem="dMp-IN-XHa" secondAttribute="top" constant="48" id="kXh-Mv-zN8"/>
                                     <constraint firstAttribute="height" constant="76" id="msT-xl-F1Y"/>
+                                    <constraint firstItem="nFo-fY-mfD" firstAttribute="centerY" secondItem="9OA-t4-qhZ" secondAttribute="centerY" id="xJz-0u-feU"/>
                                     <constraint firstItem="9OA-t4-qhZ" firstAttribute="top" secondItem="dMp-IN-XHa" secondAttribute="top" constant="16" id="xq3-OD-s3D"/>
                                 </constraints>
                             </view>

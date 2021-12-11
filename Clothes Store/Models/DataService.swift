@@ -19,15 +19,15 @@ class DataService {
             return
         }
 
-        let request = URLRequest(url: url)
 
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
+        
 
-        URLSession.shared.dataTask(with: request) { jsonData, response, error in
+        URLSession.shared.dataTask(with: url) { jsonData, response, error in
             if let data = jsonData {
                 if let decodedResponse = try? decoder.decode(Products.self, from: data) {
-                    // we have good data – go back to the main thread
+                    // data received so use main thread to update products
                     DispatchQueue.main.async {
                         products.products = decodedResponse.products
                     }
