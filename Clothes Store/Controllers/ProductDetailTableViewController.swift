@@ -26,8 +26,6 @@ class ProductDetailTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +33,6 @@ class ProductDetailTableViewController: UITableViewController {
     }
     
     func loadData() {
-        
         productName.text = product?.name
         productPrice.text = CurrencyHelper.getMoneyString(product?.price ?? 0)
         
@@ -66,7 +63,8 @@ class ProductDetailTableViewController: UITableViewController {
         } else {
             productImageView.image = placeHolderImage
         }
-
+        
+        tableView.reloadData()
     }
     
 

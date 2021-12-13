@@ -20,13 +20,17 @@ class DetailViewContainerViewController: UIViewController {
 
     //Variables
     var product : Product!
+    var stock: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        stock = Basket.checkStock(product: product)
 
         setUpButtons()
         setUpLabels()
     }
+    
     
     func setUpLabels() {
         addedToBasketLabel.isHidden = true
@@ -35,7 +39,15 @@ class DetailViewContainerViewController: UIViewController {
     
     func setUpButtons(){
         wishListButton.dropShadow(radius: 8, opacity: 0.2, color: .black)
-        addToCartButton.dropShadow(radius: 8, opacity: 0.4, color: UIColor.primaryColour)
+        
+        if stock == 0 {
+            addToCartButton.dropShadow(radius: 0, opacity: 0, color: UIColor.primaryColour)
+            addToCartButton.backgroundColor = UIColor.quaternaryLabel
+            addToCartButton.isEnabled = false
+        } else {
+            addToCartButton.dropShadow(radius: 8, opacity: 0.4, color: UIColor.primaryColour)
+        }
+        
     }
 
     // MARK: - Navigation
@@ -60,7 +72,12 @@ class DetailViewContainerViewController: UIViewController {
         
         Basket.addToBasket(product: product)
         
+        stock = Basket.checkStock(product: product)
+        
         print(Basket.items.count)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            self.setUpButtons()
+        }
     }
 
     @IBAction func addToWishListAction(_ sender: Any) {
