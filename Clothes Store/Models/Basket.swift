@@ -13,11 +13,15 @@ import Combine
 class Basket {
     static var items: [BasketItem] = []
     
+
     static var totalInBasket: Int { Basket.items.map( { $0.numberOfItems } ).reduce(0, +) }
     
+    @Published var totalInBasketPublished = String(calculateTotalInBasket())
     
-    @Published var totalInBasketPublisher = 0
     
+    static func calculateTotalInBasket() -> Int {
+        return Basket.items.map( { $0.numberOfItems } ).reduce(0, +)
+    }
     
     static func removeFromBasket(product: Product) {
         items.removeAll(where: { $0.product.productId == product.productId })

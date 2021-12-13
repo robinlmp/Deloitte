@@ -6,6 +6,7 @@
 //  Copyright © 2021 Deloitte. All rights reserved.
 //
 import UIKit
+import Combine
 
 class TabBarController: UITabBarController {
 
@@ -16,9 +17,16 @@ class TabBarController: UITabBarController {
     
     var wishListCount = 4
     var basketCount = Basket.totalInBasket
+    
+    private var totalSubscriber: AnyCancellable?
+    private var basketViewModel = Basket()
+    
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         loadData()
         
     }
@@ -35,6 +43,13 @@ class TabBarController: UITabBarController {
             
             tabItem = tabItems[2]
             tabItem?.badgeValue = String(basketCount)
+            
+            
+            totalSubscriber = basketViewModel.$totalInBasketPublished
+                .receive(on: DispatchQueue.main)
+                .sink(receiveValue: { value in
+                    self.tabItem?.badgeValue = value.description
+                })
             
         }
 
