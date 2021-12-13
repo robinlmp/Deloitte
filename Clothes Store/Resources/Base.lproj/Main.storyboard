@@ -682,7 +682,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csv-wr-LoH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csv-wr-LoH">
                                                     <rect key="frame" x="241" y="79" width="150" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="cQv-iI-09t"/>
@@ -874,8 +874,8 @@
     <resources>
         <image name="cart" width="15" height="13"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
-        <image name="heart.circle" width="13" height="13"/>
         <image name="heart.circle" catalog="system" width="128" height="121"/>
+        <image name="heart.circle" width="13" height="13"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="photo.placeholder" width="2481" height="2481"/>
