@@ -12,6 +12,7 @@ import Combine
 
 class Basket {
     static var items: [BasketItem] = []
+    static var wishListItems: [BasketItem] = []
     
 
     static var totalInBasket: Int { Basket.items.map( { $0.numberOfItems } ).reduce(0, +) }
@@ -61,8 +62,21 @@ class Basket {
         } else {
             print("insuffient stock")
         }
-        
     }
+    
+    static func addToWishList(product: Product) {
+        guard items.first(where: { $0.product.productId == product.productId  })?.numberOfItems == nil else { return }
+        
+        wishListItems.append(BasketItem(product: product))
+    }
+    
+    static func removeFromWishList(product: Product) {
+        guard items.first(where: { $0.product.productId == product.productId  })?.numberOfItems != nil else { return }
+        
+        guard let index = wishListItems.firstIndex(where: { $0.product.productId == product.productId }) else { return }
+        wishListItems.remove(at: index)
+    }
+    
     
     static func checkStock(product: Product?) -> Int? {
         guard let product = product else { return nil }

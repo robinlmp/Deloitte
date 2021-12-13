@@ -33,6 +33,7 @@ class BasketViewController: UIViewController, UITableViewDataSource {
         checkoutButton.dropShadow(radius: 8, opacity: 0.4, color: UIColor.primaryColour)
         
         total.text = totalCost
+        noProductsLabel.isHidden = productsArray.isEmpty ? false : true
 
         tableView.reloadData()
     }
@@ -61,24 +62,24 @@ extension BasketViewController: UITableViewDelegate {
         productsArray = Basket.items.map( { $0.product } )
         totalCost = Basket.calculateBasketTotalCost()
         total.text = totalCost
-
+        noProductsLabel.isHidden = productsArray.isEmpty ? false : true
+        
         tableView.reloadData()
     }
         
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return productsArray.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "basketCell") as? BasketViewTableViewCell
         {
             cell.configureWithProduct(basketItem: Basket.items[indexPath.row])
-            
             return cell
         }
-        
         return UITableViewCell()
     }
     

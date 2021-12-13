@@ -83,6 +83,8 @@ class DetailViewContainerViewController: UIViewController {
     @IBAction func addToWishListAction(_ sender: Any) {
         Haptic.feedBack()
         
+        Basket.addToWishList(product: product)
+        
         wishListButton.buttonPress(label: addedToWishlistLabel, pressedColour: .pressedColourForWhite)
         
         

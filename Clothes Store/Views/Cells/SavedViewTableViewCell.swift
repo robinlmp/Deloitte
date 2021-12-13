@@ -19,10 +19,10 @@ class SavedViewTableViewCell: UITableViewCell{
     //Variables
     weak var delegate : BuyCellButtonTapped?
 
-    func configureWithProduct(product: Product){
+    func configureWithProduct(basketItem: BasketItem){
 
-        self.productName.text = product.name
-        self.productPrice.text = CurrencyHelper.getMoneyString(product.price ?? 0)
+        self.productName.text = basketItem.product.name
+        self.productPrice.text = CurrencyHelper.getMoneyString(basketItem.product.price ?? 0)
         self.cellView.dropShadow(radius: 10, opacity: 0.1, color: .black)
 
     }

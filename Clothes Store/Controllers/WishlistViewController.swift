@@ -13,17 +13,43 @@ protocol BuyCellButtonTapped: AnyObject {
     func addProductToBasket(_ sender: SavedViewTableViewCell)
 }
 
-class WishlistViewController: UIViewController, BuyCellButtonTapped {
+class WishlistViewController: UIViewController, BuyCellButtonTapped, UITableViewDataSource {
 
     //Views
     @IBOutlet var tableView: UITableView!
     @IBOutlet var noProductsLabel: UILabel!
 
     //Variables
+    var productsArray: [Product] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        productsArray = Basket.wishListItems.map( { $0.product } )
+        
+        noProductsLabel.isHidden = productsArray.isEmpty ? false : true
 
+        tableView.reloadData()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "savedCell") as? SavedViewTableViewCell
+        {
+            cell.configureWithProduct(basketItem: Basket.wishListItems[indexPath.row])
+            
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return productsArray.count
     }
 
     // MARK: - Actions
@@ -34,6 +60,14 @@ class WishlistViewController: UIViewController, BuyCellButtonTapped {
 }
 
 extension WishlistViewController: UITableViewDelegate{
+    
+    override func viewWillAppear(_ animated: Bool) {
+        productsArray = Basket.wishListItems.map( { $0.product } )
+        noProductsLabel.isHidden = productsArray.isEmpty ? false : true
+
+        tableView.reloadData()
+    }
+    
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 125
