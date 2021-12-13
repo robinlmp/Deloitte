@@ -73,7 +73,7 @@ extension BasketViewController: UITableViewDelegate {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "basketCell") as? BasketViewTableViewCell
         {
-            cell.configureWithProduct(product: Basket.items[indexPath.row].product)
+            cell.configureWithProduct(basketItem: Basket.items[indexPath.row])
             
             return cell
         }

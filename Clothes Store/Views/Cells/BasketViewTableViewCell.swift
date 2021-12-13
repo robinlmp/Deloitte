@@ -21,12 +21,15 @@ class BasketViewTableViewCell: UITableViewCell{
     //Variables
     weak var delegate : BuyCellButtonTapped?
 
-    func configureWithProduct(product: Product){
+    func configureWithProduct(basketItem: BasketItem){
+        
+        let product = basketItem.product
+        let quantity = basketItem.numberOfItems
 
         self.productName?.text = product.name
         self.productPrice?.text = CurrencyHelper.getMoneyString(product.price ?? 0)
         self.cellView?.dropShadow(radius: 10, opacity: 0.1, color: .black)
-        self.quantity?.text = "Qty: \(product.stock ?? 1)"
+        self.quantity?.text = "Qty: \(quantity)"
         let placeHolderImage = UIImage(imageTitle: .placeHolder)
         
         if let imageURL = URL(string: product.image ?? "") {
