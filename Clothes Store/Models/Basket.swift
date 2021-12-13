@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Combine
+
 
 struct Basket {
     static var items: [BasketItem] = []
-    
     
     static func removeFromBasket(product: Product) {
         items.removeAll(where: { $0.product.productId == product.productId })

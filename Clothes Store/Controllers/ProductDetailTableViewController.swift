@@ -26,6 +26,15 @@ class ProductDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
+    
+    func loadData() {
+        
         productName.text = product?.name
         productPrice.text = CurrencyHelper.getMoneyString(product?.price ?? 0)
 
@@ -39,7 +48,7 @@ class ProductDetailTableViewController: UITableViewController {
 
         productCategory.text = product?.category?.rawValue
         productStockCount.text = "\(Basket.checkStock(product: product) ?? 0)"
-        if (product?.stock ?? 0) > 0 {
+        if (Basket.checkStock(product: product) ?? 0) > 0 {
             productInStock.text = "In Stock"
         }else{
             productInStock.text = "Out of Stock"
@@ -54,8 +63,9 @@ class ProductDetailTableViewController: UITableViewController {
         } else {
             productImageView.image = placeHolderImage
         }
-       
+
     }
+    
 
     // MARK: - Table view data source & delegates
 
