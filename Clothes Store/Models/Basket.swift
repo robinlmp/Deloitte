@@ -16,16 +16,27 @@ class Basket {
 
     static var totalInBasket: Int { Basket.items.map( { $0.numberOfItems } ).reduce(0, +) }
     
-    @Published var totalInBasketPublished = String(calculateTotalInBasket())
+    @Published var totalInBasketPublished = String(calculateTotalItemsInBasket())
     
     
-    static func calculateTotalInBasket() -> Int {
+    
+    
+    static func calculateTotalItemsInBasket() -> Int {
         return Basket.items.map( { $0.numberOfItems } ).reduce(0, +)
     }
+    
+    
+    static func calculateBasketTotalCost() -> String {
+        return "$" + String(format: "%.2f", Basket.items
+                        .map( { ($0.product.price ?? 0 ) * Float($0.numberOfItems) } )
+                        .reduce(Float(0), +))
+    }
+    
     
     static func removeFromBasket(product: Product) {
         items.removeAll(where: { $0.product.productId == product.productId })
     }
+    
     
     static func addToBasket(product: Product) {
         

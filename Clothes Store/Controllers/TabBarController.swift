@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
 
     //Variables
     
-    var wishListCount = 4
+    var wishListCount = 0
     var basketCount = Basket.totalInBasket
     
     private var totalSubscriber: AnyCancellable?

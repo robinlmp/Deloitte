@@ -19,24 +19,22 @@ class BasketViewController: UIViewController, UITableViewDataSource {
     
     //Variables
     var productsArray: [Product] = []
-//    var numberOfRows: Int = 0
+    var totalCost: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.reloadData()
         
         tableView.dataSource = self
         tableView.delegate = self
         
         productsArray = Basket.items.map( { $0.product } )
+        totalCost = Basket.calculateBasketTotalCost()
 
         checkoutButton.dropShadow(radius: 8, opacity: 0.4, color: UIColor.primaryColour)
         
-        total.text = "$" + String(format: "%.2f", Basket.items.map( { $0.product.price ?? 0 } ).reduce(Float(0), +))
-        
-        print(Basket.items.description)
+        total.text = totalCost
 
+        tableView.reloadData()
     }
     
     
@@ -61,6 +59,9 @@ extension BasketViewController: UITableViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         productsArray = Basket.items.map( { $0.product } )
+        totalCost = Basket.calculateBasketTotalCost()
+        total.text = totalCost
+
         tableView.reloadData()
     }
         
