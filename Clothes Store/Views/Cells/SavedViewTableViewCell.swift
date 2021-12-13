@@ -15,20 +15,30 @@ class SavedViewTableViewCell: UITableViewCell{
     @IBOutlet var productName: UILabel!
     @IBOutlet var productPrice: UILabel!
     @IBOutlet var addToButton: UIButton!
-
+    @IBOutlet weak var productImage: UIImageView!
+    
     //Variables
     weak var delegate : BuyCellButtonTapped?
 
     func configureWithProduct(basketItem: BasketItem){
-
-        self.productName.text = basketItem.product.name
-        self.productPrice.text = CurrencyHelper.getMoneyString(basketItem.product.price ?? 0)
+        let product = basketItem.product
+        
+        self.productName.text = product.name
+        self.productPrice.text = CurrencyHelper.getMoneyString(product.price ?? 0)
         self.cellView.dropShadow(radius: 10, opacity: 0.1, color: .black)
-
+        
+        let placeHolderImage = UIImage(imageTitle: .placeHolder)
+        
+        if let imageURL = URL(string: product.image ?? "") {
+            productImage.load(url: imageURL)
+        } else {
+            productImage.image = placeHolderImage
+        }
     }
 
     @IBAction func addToBasket(_ sender: Any) {
-        delegate?.addProductToBasket(self)
+        Basket.moveToBasketFromWishlist(basketItem: Basket.wishListItems.first(where: { $0.product.name == productName.text }))
+        
     }
 
 

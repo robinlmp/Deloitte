@@ -228,6 +228,7 @@
                                         <connections>
                                             <outlet property="addToButton" destination="xet-Po-heQ" id="9SQ-Pc-vuu"/>
                                             <outlet property="cellView" destination="391-v7-OzB" id="WLs-ph-pKJ"/>
+                                            <outlet property="productImage" destination="n9D-WV-6yK" id="uKa-0x-5Wf"/>
                                             <outlet property="productName" destination="pfY-Cg-v4L" id="5Zi-9k-qMh"/>
                                             <outlet property="productPrice" destination="j4E-l9-EgQ" id="Ka3-8T-UTz"/>
                                         </connections>

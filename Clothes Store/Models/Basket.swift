@@ -10,16 +10,17 @@ import UIKit
 import Combine
 
 
-class Basket {
+class Basket: ObservableObject {
     static var items: [BasketItem] = []
     static var wishListItems: [BasketItem] = []
     
 
     static var totalInBasket: Int { Basket.items.map( { $0.numberOfItems } ).reduce(0, +) }
     
+    // Couldn't get this publisher working. I've not used Combine outside of SwiftUI before
+    // Suspect it is because the method doesn't get called and having modelled everything
+    // else with static properties, I can't make them publishers.
     @Published var totalInBasketPublished = String(calculateTotalItemsInBasket())
-    
-    
     
     
     static func calculateTotalItemsInBasket() -> Int {
@@ -28,9 +29,9 @@ class Basket {
     
     
     static func calculateBasketTotalCost() -> String {
-        return "$" + String(format: "%.2f", Basket.items
+        return CurrencyHelper.getMoneyString( Basket.items
                         .map( { ($0.product.price ?? 0 ) * Float($0.numberOfItems) } )
-                        .reduce(Float(0), +))
+                        .reduce(Float(0), +) )
     }
     
     
@@ -75,6 +76,17 @@ class Basket {
         
         guard let index = wishListItems.firstIndex(where: { $0.product.productId == product.productId }) else { return }
         wishListItems.remove(at: index)
+    }
+    
+    static func moveToBasketFromWishlist(basketItem: BasketItem?) {
+        guard let basketItem = basketItem else {
+            return
+        }
+
+        if let index = wishListItems.firstIndex(where: { $0.product.productId == basketItem.product.productId }) {
+            Basket.addToBasket(product: wishListItems[index].product)
+            wishListItems.remove(at: index)
+        }
     }
     
     
