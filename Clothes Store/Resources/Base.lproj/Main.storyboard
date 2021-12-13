@@ -447,7 +447,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMp-IN-XHa">
                                 <rect key="frame" x="0.0" y="737" width="414" height="76"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zp-Oq-DD2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zp-Oq-DD2">
                                         <rect key="frame" x="223" y="10" width="170" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="51" id="PSM-2i-Ybc"/>
@@ -485,16 +485,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="nFo-fY-mfD" firstAttribute="width" secondItem="5zp-Oq-DD2" secondAttribute="width" id="6jq-KE-pjQ"/>
                                     <constraint firstItem="5zp-Oq-DD2" firstAttribute="width" secondItem="9OA-t4-qhZ" secondAttribute="width" id="8oU-JF-Szl"/>
+                                    <constraint firstItem="nFo-fY-mfD" firstAttribute="width" secondItem="5zp-Oq-DD2" secondAttribute="width" id="Jdf-Pz-g22"/>
                                     <constraint firstItem="9OA-t4-qhZ" firstAttribute="leading" secondItem="dMp-IN-XHa" secondAttribute="leading" constant="21" id="L1x-FK-pMp"/>
                                     <constraint firstAttribute="trailing" secondItem="5zp-Oq-DD2" secondAttribute="trailing" constant="21" id="Mb4-sv-6vB"/>
+                                    <constraint firstAttribute="trailing" secondItem="nFo-fY-mfD" secondAttribute="trailing" constant="21" id="TC2-61-f3u"/>
                                     <constraint firstItem="5zp-Oq-DD2" firstAttribute="leading" relation="lessThanOrEqual" secondItem="9OA-t4-qhZ" secondAttribute="trailing" constant="32" id="WTx-jb-vI2"/>
-                                    <constraint firstItem="nFo-fY-mfD" firstAttribute="centerX" secondItem="5zp-Oq-DD2" secondAttribute="centerX" id="ZRF-Zd-2Q4"/>
                                     <constraint firstItem="5zp-Oq-DD2" firstAttribute="top" secondItem="dMp-IN-XHa" secondAttribute="top" constant="10" id="efj-eo-Jbu"/>
                                     <constraint firstAttribute="height" constant="76" id="msT-xl-F1Y"/>
                                     <constraint firstItem="nFo-fY-mfD" firstAttribute="centerY" secondItem="9OA-t4-qhZ" secondAttribute="centerY" id="xJz-0u-feU"/>
                                     <constraint firstItem="9OA-t4-qhZ" firstAttribute="top" secondItem="dMp-IN-XHa" secondAttribute="top" constant="16" id="xq3-OD-s3D"/>
+                                    <constraint firstItem="5zp-Oq-DD2" firstAttribute="leading" secondItem="nFo-fY-mfD" secondAttribute="leading" id="ycv-41-EM6"/>
                                 </constraints>
                             </view>
                         </subviews>
