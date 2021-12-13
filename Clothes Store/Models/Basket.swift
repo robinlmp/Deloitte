@@ -65,18 +65,22 @@ class Basket: ObservableObject {
         }
     }
     
+    
     static func addToWishList(product: Product) {
-        guard items.first(where: { $0.product.productId == product.productId  })?.numberOfItems == nil else { return }
+        guard wishListItems.first(where: { $0.product.productId == product.productId })?.numberOfItems == nil else { return }
+        
         
         wishListItems.append(BasketItem(product: product))
     }
     
+    
     static func removeFromWishList(product: Product) {
-        guard items.first(where: { $0.product.productId == product.productId  })?.numberOfItems != nil else { return }
+        guard wishListItems.first(where: { $0.product.productId == product.productId  })?.numberOfItems != nil else { return }
         
         guard let index = wishListItems.firstIndex(where: { $0.product.productId == product.productId }) else { return }
         wishListItems.remove(at: index)
     }
+    
     
     static func moveToBasketFromWishlist(basketItem: BasketItem?) {
         guard let basketItem = basketItem else {

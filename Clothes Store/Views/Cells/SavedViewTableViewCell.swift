@@ -37,6 +37,10 @@ class SavedViewTableViewCell: UITableViewCell{
     }
 
     @IBAction func addToBasket(_ sender: Any) {
+        delegate?.addProductToBasket(self)
+        
+        addToButton.buttonPress(pressedColour: UIColor.white)
+        
         Basket.moveToBasketFromWishlist(basketItem: Basket.wishListItems.first(where: { $0.product.name == productName.text }))
         
     }

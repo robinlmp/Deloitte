@@ -30,7 +30,6 @@ class WishlistViewController: UIViewController, BuyCellButtonTapped, UITableView
         tableView.delegate = self
         
         productsArray = Basket.wishListItems.map( { $0.product } )
-        
         noProductsLabel.isHidden = productsArray.isEmpty ? false : true
 
         tableView.reloadData()
@@ -41,10 +40,8 @@ class WishlistViewController: UIViewController, BuyCellButtonTapped, UITableView
         if let cell = tableView.dequeueReusableCell(withIdentifier: "savedCell") as? SavedViewTableViewCell
         {
             cell.configureWithProduct(basketItem: Basket.wishListItems[indexPath.row])
-            
             return cell
         }
-        
         return UITableViewCell()
     }
     
@@ -55,16 +52,13 @@ class WishlistViewController: UIViewController, BuyCellButtonTapped, UITableView
     // MARK: - Actions
     func addProductToBasket(_ sender: SavedViewTableViewCell) {
         Haptic.feedBack()
-        
     }
 }
 
 extension WishlistViewController: UITableViewDelegate{
-    
     override func viewWillAppear(_ animated: Bool) {
         productsArray = Basket.wishListItems.map( { $0.product } )
         noProductsLabel.isHidden = productsArray.isEmpty ? false : true
-
         tableView.reloadData()
     }
     
@@ -72,15 +66,21 @@ extension WishlistViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 125
     }
+    
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
         let deleteAction = UIContextualAction.init(style:.destructive, title: "Remove", handler: { (action, view, completion) in
+            
+            Basket.removeFromWishList(product: self.productsArray[indexPath.row])
+            self.productsArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
             
             Haptic.feedBack()
           

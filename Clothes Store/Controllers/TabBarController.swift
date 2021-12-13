@@ -16,7 +16,7 @@ class TabBarController: UITabBarController {
     //Variables
     
     var wishListCount = 0
-    var basketCount = Basket.totalInBasket
+    var basketCount = Basket.calculateTotalItemsInBasket()
     
     private var totalSubscriber: AnyCancellable?
     private var basketViewModel = Basket()
@@ -24,9 +24,7 @@ class TabBarController: UITabBarController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+
         loadData()
         
     }
@@ -36,11 +34,11 @@ class TabBarController: UITabBarController {
         loadData()
 
         if let tabItems = tabBar.items {
-            // In this case we want to modify the badge number of the third tab:
+            // In this case we want to modify the badge number of the second tab:
             tabItem = tabItems[1]
             tabItem?.badgeValue = String(wishListCount)
             
-            
+            // In this case we want to modify the badge number of the third tab:
             tabItem = tabItems[2]
             tabItem?.badgeValue = String(basketCount)
             
@@ -52,10 +50,11 @@ class TabBarController: UITabBarController {
                 })
             
         }
+        
 
     }
     
     func loadData() {
-        self.basketCount = Basket.totalInBasket
+        self.basketCount = Basket.calculateTotalItemsInBasket()
     }
 }
