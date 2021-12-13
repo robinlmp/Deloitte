@@ -33,6 +33,7 @@ class TabBarController: UITabBarController {
             
             tabItem = tabItems[2]
             tabItem?.badgeValue = String(basketCount)
+            
         }
 
     }

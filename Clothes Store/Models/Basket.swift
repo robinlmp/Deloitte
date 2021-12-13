@@ -12,6 +12,7 @@ struct Basket {
     static var items: [BasketItem] = []
 }
 
+
 struct BasketItem {
     var numberOfItems: Int = 1
     

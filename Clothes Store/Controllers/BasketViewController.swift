@@ -19,6 +19,7 @@ class BasketViewController: UIViewController, UITableViewDataSource {
     
     //Variables
     var productsArray: [Product] = []
+//    var numberOfRows: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,8 @@ class BasketViewController: UIViewController, UITableViewDataSource {
     }
     
     
+    
+    
     // MARK: - Actions
     
     @IBAction func checkoutButton(_ sender: Any) {
@@ -54,8 +57,13 @@ class BasketViewController: UIViewController, UITableViewDataSource {
     
 }
 
-extension BasketViewController: UITableViewDelegate{
+extension BasketViewController: UITableViewDelegate {
     
+    override func viewWillAppear(_ animated: Bool) {
+        productsArray = Basket.items.map( { $0.product } )
+        tableView.reloadData()
+    }
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return productsArray.count
