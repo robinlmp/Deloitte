@@ -22,10 +22,11 @@ class ProductDetailTableViewController: UITableViewController {
     //Variables
     var product : Product?
     var productImage : UIImage?
+    var stock : Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loadData()
     }
     
@@ -37,6 +38,8 @@ class ProductDetailTableViewController: UITableViewController {
         
         productName.text = product?.name
         productPrice.text = CurrencyHelper.getMoneyString(product?.price ?? 0)
+        
+        stock = Basket.checkStock(product: product)
 
         let attributedString = NSMutableAttributedString(string: CurrencyHelper.getMoneyString(product?.oldPrice ?? 0))
         attributedString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSNumber(value: NSUnderlineStyle.single.rawValue), range: NSMakeRange(0, attributedString.length))
@@ -47,8 +50,8 @@ class ProductDetailTableViewController: UITableViewController {
         }
 
         productCategory.text = product?.category?.rawValue
-        productStockCount.text = "\(Basket.checkStock(product: product) ?? 0)"
-        if (Basket.checkStock(product: product) ?? 0) > 0 {
+        productStockCount.text = "\(stock ?? 0)"
+        if (stock ?? 0) > 0 {
             productInStock.text = "In Stock"
         }else{
             productInStock.text = "Out of Stock"

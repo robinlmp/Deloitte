@@ -10,8 +10,14 @@ import UIKit
 import Combine
 
 
-struct Basket {
+class Basket {
     static var items: [BasketItem] = []
+    
+    static var totalInBasket: Int { Basket.items.map( { $0.numberOfItems } ).reduce(0, +) }
+    
+    
+    @Published var totalInBasketPublisher = 0
+    
     
     static func removeFromBasket(product: Product) {
         items.removeAll(where: { $0.product.productId == product.productId })
@@ -57,8 +63,12 @@ struct Basket {
 }
 
 
-struct BasketItem {
+class BasketItem {
     var numberOfItems: Int = 1
     
     let product: Product
+    
+    init(product: Product) {
+        self.product = product
+    }
 }
