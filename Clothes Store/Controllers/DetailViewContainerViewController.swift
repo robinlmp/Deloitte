@@ -59,7 +59,7 @@ class DetailViewContainerViewController: UIViewController {
         addToCartButton.buttonPress(label: addedToBasketLabel, pressedColour: .pressedColour)
         
 //        Basket.items.append(BasketItem(product: product))
-        Basket.addToBasket(productID: product.productId ?? "")
+        Basket.addToBasket(product: product)
         
         print(Basket.items.count)
     }

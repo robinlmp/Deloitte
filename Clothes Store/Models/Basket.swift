@@ -11,44 +11,42 @@ import UIKit
 struct Basket {
     static var items: [BasketItem] = []
     
-    static func addToBasket(productID: String) {
-        let products = Products()
+    static func addToBasket(product: Product) {
+//        let products = Products()
         
         // check if there is stock remaining
-        guard let productStock = products.products?.first(where: { $0.productId == productID } )?.stock else {
+        guard let productStock = product.stock else {
             print("product not found in products")
             return
         }
         
         // checks if the product is in the basket
-        if let basketQuantity = items.first(where: { $0.product.productId == productID  })?.numberOfItems {
+        if let basketQuantity = items.first(where: { $0.product.productId == product.productId  })?.numberOfItems {
 
             if productStock > basketQuantity { // check if there is stock
-                    guard let index = items.firstIndex(where: { $0.product.productId == productID }) else { return }
+                guard let index = items.firstIndex(where: { $0.product.productId == product.productId }) else { return }
                     items[index].numberOfItems += 1
             } else {
                 print("insuffient stock")
             }
             // if it doesn't already exist, add product to basket if there are any in stock
         } else if productStock > 0 {
-            if let tempProduct = products.products?.first(where: { $0.productId == productID } ) {
-                items.append(BasketItem(product: tempProduct))
-            }
+                items.append(BasketItem(product: product))
         } else {
             print("insuffient stock")
         }
         
     }
     
-    static func checkStock(productID: String) -> Int {
+    static func checkStock(product: Product) -> Int {
         // compare basket contents against stock
-        
-        return -999
+        guard let stock = product.stock else { return 0 }
+        if let basketQuantity = items.first(where: { $0.product.productId == product.productId  })?.numberOfItems {
+            return stock - basketQuantity
+        }
+        return stock
     }
     
-    //    static func findProductInBasketByID(productID: String) -> BasketItem {
-    //
-    //    }
 }
 
 
