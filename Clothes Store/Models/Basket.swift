@@ -11,8 +11,12 @@ import UIKit
 struct Basket {
     static var items: [BasketItem] = []
     
+    
+    static func removeFromBasket(product: Product) {
+        items.removeAll(where: { $0.product.productId == product.productId })
+    }
+    
     static func addToBasket(product: Product) {
-//        let products = Products()
         
         // check if there is stock remaining
         guard let productStock = product.stock else {
@@ -38,9 +42,11 @@ struct Basket {
         
     }
     
-    static func checkStock(product: Product) -> Int {
+    static func checkStock(product: Product?) -> Int? {
+        guard let product = product else { return nil }
+
         // compare basket contents against stock
-        guard let stock = product.stock else { return 0 }
+        guard let stock = product.stock else { return nil }
         if let basketQuantity = items.first(where: { $0.product.productId == product.productId  })?.numberOfItems {
             return stock - basketQuantity
         }
@@ -54,26 +60,4 @@ struct BasketItem {
     var numberOfItems: Int = 1
     
     let product: Product
-    
-    //    mutating func addExtraItem() {
-    //        numberOfItems += 1
-    //    }
-    
-    //    mutating func addExtraToBasket(productID: String) {
-    //        let products = Products()
-    //
-    //        // check if there is stock remaining
-    //        guard let productStock = products.products?.first(where: { $0.productId == productID } )?.stock else { return }
-    //        guard let basketQuantity = Basket.items.first(where: { $0.product.productId == productID  })?.numberOfItems else { return }
-    //
-    //        if productStock > basketQuantity && basketQuantity > 0 {
-    //            // check if item aleady exists in basket add item to basket or BasketItem.numberOfItems +1
-    //                addExtraItem()
-    //
-    //
-    //        }
-    //
-    //    }
-    
-    
 }

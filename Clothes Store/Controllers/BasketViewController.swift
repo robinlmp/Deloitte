@@ -98,8 +98,11 @@ extension BasketViewController: UITableViewDelegate {
         
         let deleteAction = UIContextualAction.init(style:.destructive, title: "Remove", handler: { (action, view, completion) in
             
+            
+            Basket.removeFromBasket(product: self.productsArray[indexPath.row])
             self.productsArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
             
             Haptic.feedBack()
         })

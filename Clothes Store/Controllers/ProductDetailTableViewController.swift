@@ -38,7 +38,7 @@ class ProductDetailTableViewController: UITableViewController {
         }
 
         productCategory.text = product?.category?.rawValue
-        productStockCount.text = "\(product?.stock ?? 0)"
+        productStockCount.text = "\(Basket.checkStock(product: product) ?? 0)"
         if (product?.stock ?? 0) > 0 {
             productInStock.text = "In Stock"
         }else{
