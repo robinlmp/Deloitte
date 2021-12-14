@@ -9,6 +9,15 @@
 import UIKit
 import Combine
 
+// I started off with the target version set to iOS12 and only changed to iOS15 evening 13th Decemember.
+// I'm not that experienced with passing data around between view controllers (as I imagine you can see)
+// And without access to the Combine wrappers built into SwiftUI, I opted to rely on static properties.
+// When I then upped the target to iOS15 to get access to Combine and SwiftUI (for tasks 5 and 6) it
+// became clear that this earlier decision wasn't a great one. At the time of writing this I have a few
+// hours left and have decided it is better to document what I have done. If I have time I may have
+// a go at rejigging things. I think I need to learn more about delegates.
+// Started off with Basket as a struct and changed to a class to try to get Combine working.
+
 
 class Basket: ObservableObject {
     static var items: [BasketItem] = []
@@ -67,26 +76,25 @@ class Basket: ObservableObject {
     
     
     static func addToWishList(product: Product) {
+        // checks that the product doesn't already exist in wishlist
         guard wishListItems.first(where: { $0.product.productId == product.productId })?.numberOfItems == nil else { return }
-        
-        
         wishListItems.append(BasketItem(product: product))
     }
     
     
     static func removeFromWishList(product: Product) {
+        // checks that the product exists in wishlist before trying to remove it. Maybe the first guard isn't required
         guard wishListItems.first(where: { $0.product.productId == product.productId  })?.numberOfItems != nil else { return }
-        
         guard let index = wishListItems.firstIndex(where: { $0.product.productId == product.productId }) else { return }
         wishListItems.remove(at: index)
     }
     
     
     static func moveToBasketFromWishlist(basketItem: BasketItem?) {
-        guard let basketItem = basketItem else {
-            return
-        }
-
+        guard let basketItem = basketItem else { return }
+        
+        // checks that the BasketItem is in the wishlist before trying to add it to the basket and remove it
+        // from the wishlist
         if let index = wishListItems.firstIndex(where: { $0.product.productId == basketItem.product.productId }) {
             Basket.addToBasket(product: wishListItems[index].product)
             wishListItems.remove(at: index)
@@ -108,6 +116,7 @@ class Basket: ObservableObject {
 }
 
 
+// Wrapped product to keep track of number of items in the basket. Started as a struct and changed to class as above
 class BasketItem: Hashable {
     static func == (lhs: BasketItem, rhs: BasketItem) -> Bool {
         return lhs.hashValue == rhs.hashValue && lhs.product.name == rhs.product.name && lhs.product.productId == rhs.product.productId 

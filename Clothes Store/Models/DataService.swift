@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+// Replaced Alamofire with native URLSession code. 
+
 class DataService {
     
     class func getProducts(completion: @escaping (Products?, Error?) -> Void) {
@@ -18,7 +21,6 @@ class DataService {
             print("URL is not valid")
             return
         }
-
 
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
@@ -38,6 +40,7 @@ class DataService {
                 completion(products, error)
             }
             
+// So easy to foroget to call resume!
         }.resume()
     }
 }

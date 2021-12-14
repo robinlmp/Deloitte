@@ -890,8 +890,8 @@
     <resources>
         <image name="cart" width="15" height="13"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
-        <image name="heart.circle" width="13" height="13"/>
         <image name="heart.circle" catalog="system" width="128" height="121"/>
+        <image name="heart.circle" width="13" height="13"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="photo.placeholder" width="2481" height="2481"/>
