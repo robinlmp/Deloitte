@@ -12,6 +12,7 @@
 		73115BFD2764F1EB0023FE53 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73115BFC2764F1EB0023FE53 /* Basket.swift */; };
 		73115C05276818730023FE53 /* CatalogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73115C04276818730023FE53 /* CatalogueView.swift */; };
 		73115C0927683BA50023FE53 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73115C0827683BA50023FE53 /* ProductCardView.swift */; };
+		73115C0B27683C260023FE53 /* DetailUIVCRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73115C0A27683C260023FE53 /* DetailUIVCRepresentable.swift */; };
 		BE5F27F822F035AF00F2C97D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F722F035AF00F2C97D /* AppDelegate.swift */; };
 		BE5F27FA22F035AF00F2C97D /* CatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */; };
 		BE5F27FF22F035AF00F2C97D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5F27FD22F035AF00F2C97D /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		73115BFC2764F1EB0023FE53 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		73115C04276818730023FE53 /* CatalogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueView.swift; sourceTree = "<group>"; };
 		73115C0827683BA50023FE53 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
+		73115C0A27683C260023FE53 /* DetailUIVCRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUIVCRepresentable.swift; sourceTree = "<group>"; };
 		BE5F27F422F035AF00F2C97D /* Clothes Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothes Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5F27F722F035AF00F2C97D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				BE5F282722F238FC00F2C97D /* BasketViewController.swift */,
 				BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */,
 				BE5F282522F1F4A400F2C97D /* TabBarController.swift */,
+				73115C0A27683C260023FE53 /* DetailUIVCRepresentable.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				BE5F27FA22F035AF00F2C97D /* CatalogueViewController.swift in Sources */,
 				BE5F281222F05FFA00F2C97D /* CurrencyHelpers.swift in Sources */,
 				BE5F282422F1A13600F2C97D /* HUD.swift in Sources */,
+				73115C0B27683C260023FE53 /* DetailUIVCRepresentable.swift in Sources */,
 				BE5F282E22F24F8800F2C97D /* SavedViewTableViewCell.swift in Sources */,
 				BE5F281E22F0E00800F2C97D /* ProductDetailTableViewController.swift in Sources */,
 				73115C0927683BA50023FE53 /* ProductCardView.swift in Sources */,
