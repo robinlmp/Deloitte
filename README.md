@@ -7,6 +7,8 @@ There were a couple of things in these tasks that I've not done before and I've 
 
 I've included the checklist I made and was working through as I worked on it. Many of the points noted below are discussed in much greater length in the comments within the code.
 
+One thing that is worth noting is that for all except for the last day, I was working on the basis of the app needing to target iOS 12 (as it was set up when received). There are some choices I made along the way that may well have been different had I known I was able to target a later version earlier. This isn't a complaint, rather just wanting to explain why some things are the way they are (for example, SF Symbols as SVGs in Assets).
+
 Thanks for giving me the opportunity to have a go at this.
 
 Robin
