@@ -24,7 +24,10 @@ class TabBarController: UITabBarController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        ViewMetrics.navigationBarHeight = self.navigationController?.navigationBar.frame.height
+        
         loadData()
         
     }

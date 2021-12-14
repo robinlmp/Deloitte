@@ -50,7 +50,6 @@ class Basket: ObservableObject {
     
     
     static func addToBasket(product: Product) {
-        
         /// check if there is stock remaining
         guard let productStock = product.stock else {
             print("product not found in products")
@@ -117,6 +116,8 @@ class Basket: ObservableObject {
 
 
 /// Wrapped product to keep track of number of items in the basket. Started as a struct and changed to class as above
+/// Had to conform to hashable for SwiftUI ForEach to work. Could probably do a better hash implementation with UUIDs
+/// for product ID instead of simple Ints
 class BasketItem: Hashable {
     static func == (lhs: BasketItem, rhs: BasketItem) -> Bool {
         return lhs.hashValue == rhs.hashValue && lhs.product.name == rhs.product.name && lhs.product.productId == rhs.product.productId 

@@ -18,6 +18,7 @@ struct DetailViewController: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> DetailViewContainerViewController {
         let detailVC = UIStoryboard(name: "Main", bundle: nil) .instantiateViewController(withIdentifier: "detailContainer") as! DetailViewContainerViewController
         detailVC.product = product
+        detailVC.view.addBackground()
         
         return detailVC
     }

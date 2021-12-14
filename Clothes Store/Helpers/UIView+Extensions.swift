@@ -66,6 +66,27 @@ extension UIView {
     }
 }
 
+
+/// This extension and the addition of the  manual background in the product detail view displayed modally from SwiftUI has fixed
+/// some of the problems described in the SwiftUI catalogue view comments
+extension UIView {
+    func addBackground() {
+        // screen width and height:
+        let width = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.size.height
+        
+        let background = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        
+        // you can change the content mode:
+        background.contentMode = UIView.ContentMode.scaleAspectFill
+        background.backgroundColor = UIColor.backgroundColour
+        
+        self.addSubview(background)
+        self.sendSubviewToBack(background)
+    }
+}
+
+
 extension UIAlertController{
 
     class func show(_ title: String, message: String, from controller: UIViewController) {

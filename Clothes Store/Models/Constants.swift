@@ -28,4 +28,10 @@ extension UIColor{
     class var pressedColourForWhite: UIColor{
         return #colorLiteral(red: 0.9215686275, green: 0.9215686275, blue: 0.9215686275, alpha: 1)
     }
+    
+/// background colour added primarily for SwiftUI view to match UIKit views
+    class var backgroundColour: UIColor{
+        return UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1)
+    }
+    
 }

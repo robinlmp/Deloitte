@@ -16,28 +16,31 @@ import SwiftUI
 // one does not provide a background nor does it scale upon scrolling as it would normally.
 // To work around the lack of background, I added my own. But had to live with the Navigation title
 // provided by UIKit.
-// Unfortunately, there was then a further hitch that I've not been able to work around yet which is
-// that when navigating back to UIKit product detail view displayed modally, for some reason this view
-// has no background despite various attempts to set one. Probably if my UIKit skills were better I
-// would have added one quickly enough.
+// Unfortunately, there was then a further hitch that I've partially worked around. When displaying
+// the product detail view modally from the SwiftUI catalogue view, the view lost it's background.
+// I've worked around it by adding a view extension that adds a rectangle behind the view. It works
+// OK in light mode but looks really bad in dark mode. Would need more work.
 
 struct CatalogueView: View {
-    /// Background colour to match that of
-    let appBackgroundColour = Color(UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1))
+    /// Background colour to match that of UIKit views
+    let appBackgroundColour = Color(UIColor.backgroundColour)
     
     /// Setting up griditems for the two column LazyVGrid catalogue view
     let gridItem = [GridItem(), GridItem()]
     
+    /// Empty array that is then populated as the `getProducts` function completes
     @State private var productsArray: [Product] = []
     
     var body: some View {
-
+        /// ZStack mainly because of the need for dealing with the navigation title / bar problems
             ZStack {
+        /// SwiftUI doesn't have a background by default so added one to match UIKit views
                 Rectangle().foregroundColor(appBackgroundColour)
-        
+        /// The main catalogue view is a LazyVGrid inside a ScrollView
                 ScrollView {
                     LazyVGrid(columns: gridItem, spacing: 35) {
                         ForEach(productsArray, id: \.self) { product in
+                            /// See separate child view for individual product cards or cells
                             ProductCardView(product: product)
                         }
                     }
@@ -58,18 +61,15 @@ struct CatalogueView: View {
                 } catch {
                     print(error.localizedDescription)
                 }
-                
             }
     }
-    
-    
-    
+
     
     func getProducts() throws {
         DataService.getProducts { (products, error) in
             if error != nil{
-                // Really should deal with errors here
-                
+                // Deal with errors here. My experience of erorr handling
+                // isn't extensive but I'm aware something should be done
             } else {
                 self.productsArray = products?.products ?? []
             }
