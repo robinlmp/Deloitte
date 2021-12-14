@@ -1,5 +1,5 @@
 # Deloitte
-ClothesStore
+### ClothesStore
 
 I've completed most of the tasks. There is one that I've largely failed to do which is to use Combine to make the badge icons reactive. My experience of UIKit apps is largely of much more simple things with one or maybe two VCs so much knowledge and skill about passing around data between several VCs is lacking although I'm sure I'd quickly pick it up.
 
@@ -13,6 +13,7 @@ Thanks for giving me the opportunity to have a go at this.
 
 Robin
 
+### Checklist
 
 - [x] 1. Alomafire
     - [x] Replace with native code
