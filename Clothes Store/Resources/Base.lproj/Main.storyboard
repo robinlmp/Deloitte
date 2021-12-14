@@ -10,6 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--SwiftUI View Hosting Controller-->
+        <scene sceneID="flg-Rv-QEv">
+            <objects>
+                <hostingController id="VE8-vN-qux" customClass="SwiftUIViewHostingController" customModule="Clothes_Store" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Hv4-7C-4ja"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RG4-05-VOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1787" y="-978"/>
+        </scene>
         <!--Catalogue-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
@@ -298,6 +308,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="YDn-DZ-M7D"/>
+                        <segue destination="VE8-vN-qux" kind="show" id="DAn-3e-5G2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZS-K7-lI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
