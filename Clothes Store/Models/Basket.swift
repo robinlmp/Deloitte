@@ -108,7 +108,16 @@ class Basket: ObservableObject {
 }
 
 
-class BasketItem {
+class BasketItem: Hashable {
+    static func == (lhs: BasketItem, rhs: BasketItem) -> Bool {
+        return lhs.hashValue == rhs.hashValue && lhs.product.name == rhs.product.name && lhs.product.productId == rhs.product.productId 
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(product.name)
+        hasher.combine(product.productId)
+    }
+    
     var numberOfItems: Int = 1
     
     let product: Product

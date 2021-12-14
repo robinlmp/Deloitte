@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = true
         UITabBar.appearance().isTranslucent = true
         UITabBar.appearance().tintColor = UIColor.primaryColour
-        UITabBar.appearance().backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        UITabBar.appearance().backgroundColor = #colorLiteral(red: 1, green: 0.9999999404, blue: 0.9999999404, alpha: 1)
         UITabBarItem.appearance().badgeColor = UIColor.primaryColour
     }
 

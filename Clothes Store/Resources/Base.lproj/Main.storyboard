@@ -308,7 +308,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="YDn-DZ-M7D"/>
-                        <segue destination="VE8-vN-qux" kind="show" id="DAn-3e-5G2"/>
+                        <segue destination="VE8-vN-qux" kind="show" identifier="toSwiftUI" id="DAn-3e-5G2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZS-K7-lI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
