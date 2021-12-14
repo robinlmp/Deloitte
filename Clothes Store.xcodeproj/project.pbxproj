@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		13069799264698800065C4C4 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 13069798264698800065C4C4 /* AlamofireImage */; };
 		13BBE6C12642AC250045F488 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 13BBE6C02642AC250045F488 /* Alamofire */; };
-		73115BFB2764A65A0023FE53 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73115BFA2764A65A0023FE53 /* URLSession.swift */; };
 		73115BFD2764F1EB0023FE53 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73115BFC2764F1EB0023FE53 /* Basket.swift */; };
 		73115C05276818730023FE53 /* CatalogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73115C04276818730023FE53 /* CatalogueView.swift */; };
 		BE5F27F822F035AF00F2C97D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F722F035AF00F2C97D /* AppDelegate.swift */; };
@@ -35,7 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		73115BFA2764A65A0023FE53 /* URLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSession.swift; path = "../../../../../../../Creative/Coding/_Extensions & Structs/URLSession.swift"; sourceTree = "<group>"; };
 		73115BFC2764F1EB0023FE53 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		73115C04276818730023FE53 /* CatalogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueView.swift; sourceTree = "<group>"; };
 		BE5F27F422F035AF00F2C97D /* Clothes Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothes Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,7 +142,6 @@
 				BE5F281322F068C500F2C97D /* UIView+Extensions.swift */,
 				BE5F282122F19C0200F2C97D /* HapticFeedback.swift */,
 				BE5F282322F1A13600F2C97D /* HUD.swift */,
-				73115BFA2764A65A0023FE53 /* URLSession.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -273,7 +270,6 @@
 				BE5F281E22F0E00800F2C97D /* ProductDetailTableViewController.swift in Sources */,
 				BE5F280C22F05C3E00F2C97D /* DataService.swift in Sources */,
 				BE5F280E22F05C8600F2C97D /* Product.swift in Sources */,
-				73115BFB2764A65A0023FE53 /* URLSession.swift in Sources */,
 				BE5F281422F068C500F2C97D /* UIView+Extensions.swift in Sources */,
 				BE5F281A22F0AF0A00F2C97D /* WishlistViewController.swift in Sources */,
 				BE5F281022F05D0300F2C97D /* Constants.swift in Sources */,
@@ -354,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -410,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
