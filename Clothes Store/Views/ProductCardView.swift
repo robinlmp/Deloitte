@@ -63,6 +63,7 @@ struct ProductCardView: View {
             .sheet(isPresented: $sheetShowing) {
                 
             } content: {
+                /// Displays UIKit product detail view
                 DetailViewController(product: product)
             }
 
@@ -73,9 +74,3 @@ struct ProductCardView: View {
         
     }
 }
-
-//struct ProductCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProductCardView()
-//    }
-//}

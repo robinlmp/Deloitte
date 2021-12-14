@@ -12,19 +12,15 @@ import UIKit
 
 struct DetailViewController: UIViewControllerRepresentable {
     let product: Product
-    
-    
-    
+
     func makeUIViewController(context: Context) -> DetailViewContainerViewController {
         let detailVC = UIStoryboard(name: "Main", bundle: nil) .instantiateViewController(withIdentifier: "detailContainer") as! DetailViewContainerViewController
         detailVC.product = product
+        /// This is the background that was added via the extension to help with consistency of presentation when displayed from a SwiftUI view
         detailVC.view.addBackground()
-        
         return detailVC
     }
     
-    func updateUIViewController(_ uiViewController: DetailViewContainerViewController, context: Context) {
-        
-    }
+    func updateUIViewController(_ uiViewController: DetailViewContainerViewController, context: Context) { }
     
 }

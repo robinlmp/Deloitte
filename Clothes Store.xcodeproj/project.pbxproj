@@ -11,7 +11,6 @@
 		73115C05276818730023FE53 /* CatalogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73115C04276818730023FE53 /* CatalogueView.swift */; };
 		73115C0927683BA50023FE53 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73115C0827683BA50023FE53 /* ProductCardView.swift */; };
 		73115C0B27683C260023FE53 /* DetailUIVCRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73115C0A27683C260023FE53 /* DetailUIVCRepresentable.swift */; };
-		7357E2CA2768C72400585A76 /* ViewMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7357E2C92768C72400585A76 /* ViewMetrics.swift */; };
 		BE5F27F822F035AF00F2C97D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F722F035AF00F2C97D /* AppDelegate.swift */; };
 		BE5F27FA22F035AF00F2C97D /* CatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */; };
 		BE5F27FF22F035AF00F2C97D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5F27FD22F035AF00F2C97D /* Main.storyboard */; };
@@ -39,7 +38,6 @@
 		73115C04276818730023FE53 /* CatalogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueView.swift; sourceTree = "<group>"; };
 		73115C0827683BA50023FE53 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 		73115C0A27683C260023FE53 /* DetailUIVCRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUIVCRepresentable.swift; sourceTree = "<group>"; };
-		7357E2C92768C72400585A76 /* ViewMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMetrics.swift; sourceTree = "<group>"; };
 		BE5F27F422F035AF00F2C97D /* Clothes Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothes Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5F27F722F035AF00F2C97D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				73115BFC2764F1EB0023FE53 /* Basket.swift */,
 				BE5F280F22F05D0300F2C97D /* Constants.swift */,
 				BE5F280B22F05C3E00F2C97D /* DataService.swift */,
-				7357E2C92768C72400585A76 /* ViewMetrics.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,7 +260,6 @@
 				BE5F282222F19C0300F2C97D /* HapticFeedback.swift in Sources */,
 				73115BFD2764F1EB0023FE53 /* Basket.swift in Sources */,
 				BE5F282022F0E4C600F2C97D /* DetailViewContainerViewController.swift in Sources */,
-				7357E2CA2768C72400585A76 /* ViewMetrics.swift in Sources */,
 				BE5F27F822F035AF00F2C97D /* AppDelegate.swift in Sources */,
 				BE5F27FA22F035AF00F2C97D /* CatalogueViewController.swift in Sources */,
 				BE5F281222F05FFA00F2C97D /* CurrencyHelpers.swift in Sources */,

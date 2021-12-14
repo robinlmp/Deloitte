@@ -13,9 +13,10 @@ class AnimateMe {
 
     class func animateLabel(_ label: UIView){
         
-        // There's a bug here that if you trigger the animation again before completion.
-        // Seems that viewOriginalPosition is set incorrectly. Needs looking at.
-        // Tried a few things to fix it but failed.
+        /// There's a bug here that if you trigger the animation again before it completes its previous run. Seems that viewOriginalPosition is set incorrectly. Needs looking at.
+        /// Tried a few things to fix it but failed. My hunch is that because each time `viewOriginalPosition` is run, that it sets based on wherever the frame of the
+        /// label is at the time of being triggered. If it is in it's 'base' position, ie after the animation has completed, then the next run works as expected. If it isn't in its base
+        /// position though, then the `viewOriginalPosition` gets set incorrectly and the subsequent animation runs with the wrong coordinates.
         
         let viewOriginalPosition = CGRect(x: label.frame.minX, y: label.frame.minY, width: label.frame.width, height: label.frame.height)
 

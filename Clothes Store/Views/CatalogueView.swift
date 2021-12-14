@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 
 // I had to do a few hacky things to make this view look OK. This is the first time I've done SwiftUI
@@ -31,10 +32,11 @@ struct CatalogueView: View {
     /// Empty array that is then populated as the `getProducts` function completes
     @State private var productsArray: [Product] = []
     
+    
     var body: some View {
         /// ZStack mainly because of the need for dealing with the navigation title / bar problems
             ZStack {
-        /// SwiftUI doesn't have a background by default so added one to match UIKit views
+        /// SwiftUI doesn't have a nav bar background by default so added one to match UIKit views
                 Rectangle().foregroundColor(appBackgroundColour)
         /// The main catalogue view is a LazyVGrid inside a ScrollView
                 ScrollView {
@@ -51,6 +53,10 @@ struct CatalogueView: View {
                 VStack {
                     ZStack {
                         Rectangle().foregroundColor(appBackgroundColour)
+                        /// The height of 143 seems right for iPhone 12 Pro but off for other sizes
+                        /// Would need to find a way of extracting the actual nav bar height from UIKit for SwiftUI
+                        /// to use. I imagine introspect would do it. Or direct from UIKit. I had a go but haven't worked
+                        /// it out as yet.
                     }.frame(height: 143)
                     Spacer()
                 }.ignoresSafeArea()

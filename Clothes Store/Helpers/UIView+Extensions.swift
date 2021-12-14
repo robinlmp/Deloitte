@@ -88,7 +88,6 @@ extension UIView {
 
 
 extension UIAlertController{
-
     class func show(_ title: String, message: String, from controller: UIViewController) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
@@ -109,7 +108,7 @@ extension UIImage {
 }
 
 
-// Native URL image loader extension
+/// Native URL image loader extension added
 extension UIImageView {
     func load(url: URL) {
         DispatchQueue.global().async { [weak self] in
@@ -125,8 +124,7 @@ extension UIImageView {
     }
 }
 
-// Extension for button press effect / animations. There's a bug with the animations as received
-// which is described in the HUD file.
+/// Extension for button press effect / animations. There's a bug with the animations as received which is described in the HUD file.
 extension UIButton {
     func buttonPress(label: UILabel? = nil, pressedColour: UIColor) {
         
