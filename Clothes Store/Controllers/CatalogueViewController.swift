@@ -45,12 +45,12 @@ class CatalogueViewController: UIViewController {
 
     //Variables
     var products : [Product] = []
-    
-//    let swiftUIVC = UIHostingController(rootView: CatalogueView())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /// To revert to UIKit catalogue view, commment out the call to this function
+        /// to remove the SwiftUI catalogue view from view hierarchy
         addSwiftUIView()
 
         getProducts()

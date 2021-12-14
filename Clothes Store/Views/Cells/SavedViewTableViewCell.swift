@@ -41,6 +41,9 @@ class SavedViewTableViewCell: UITableViewCell{
         
         addToButton.buttonPress(pressedColour: UIColor.white)
         
+        /// Using the product name to identify the product is not ideal. This is a further consequence of my problems
+        /// sharing data between VCs. In the context of this IBAction func, there no BasketItem or Product, just a
+        /// product name. Very aware that I've not done this correctly but it kind of works and would like to learn.
         Basket.moveToBasketFromWishlist(basketItem: Basket.wishListItems.first(where: { $0.product.name == productName.text }))
         
     }

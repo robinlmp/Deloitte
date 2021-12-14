@@ -26,9 +26,9 @@ class Basket: ObservableObject {
 
     static var totalInBasket: Int { Basket.items.map( { $0.numberOfItems } ).reduce(0, +) }
     
-    // Couldn't get this publisher working. I've not used Combine outside of SwiftUI before
-    // Suspect it is because the method doesn't get called and having modelled everything
-    // else with static properties, I can't make them publishers.
+    /// Couldn't get this publisher working. I've not used Combine outside of SwiftUI before
+    /// Suspect it is because the method doesn't get called and having modelled everything
+    /// else with static properties, I can't make them publishers.
     @Published var totalInBasketPublished = String(calculateTotalItemsInBasket())
     
     
@@ -51,22 +51,22 @@ class Basket: ObservableObject {
     
     static func addToBasket(product: Product) {
         
-        // check if there is stock remaining
+        /// check if there is stock remaining
         guard let productStock = product.stock else {
             print("product not found in products")
             return
         }
         
-        // checks if the product is in the basket
+        /// checks if the product is in the basket
         if let basketQuantity = items.first(where: { $0.product.productId == product.productId  })?.numberOfItems {
 
-            if productStock > basketQuantity { // check if there is stock
+            if productStock > basketQuantity { /// check if there is stock
                 guard let index = items.firstIndex(where: { $0.product.productId == product.productId }) else { return }
                     items[index].numberOfItems += 1
             } else {
                 print("insuffient stock")
             }
-            // if it doesn't already exist, add product to basket if there are any in stock
+            /// if it doesn't already exist, add product to basket if there are any in stock
         } else if productStock > 0 {
                 items.append(BasketItem(product: product))
         } else {
@@ -76,14 +76,14 @@ class Basket: ObservableObject {
     
     
     static func addToWishList(product: Product) {
-        // checks that the product doesn't already exist in wishlist
+        /// checks that the product doesn't already exist in wishlist
         guard wishListItems.first(where: { $0.product.productId == product.productId })?.numberOfItems == nil else { return }
         wishListItems.append(BasketItem(product: product))
     }
     
     
     static func removeFromWishList(product: Product) {
-        // checks that the product exists in wishlist before trying to remove it. Maybe the first guard isn't required
+        /// checks that the product exists in wishlist before trying to remove it. Maybe the first guard isn't required
         guard wishListItems.first(where: { $0.product.productId == product.productId  })?.numberOfItems != nil else { return }
         guard let index = wishListItems.firstIndex(where: { $0.product.productId == product.productId }) else { return }
         wishListItems.remove(at: index)
@@ -93,8 +93,8 @@ class Basket: ObservableObject {
     static func moveToBasketFromWishlist(basketItem: BasketItem?) {
         guard let basketItem = basketItem else { return }
         
-        // checks that the BasketItem is in the wishlist before trying to add it to the basket and remove it
-        // from the wishlist
+        /// checks that the BasketItem is in the wishlist before trying to add it to the basket and remove it
+        /// from the wishlist
         if let index = wishListItems.firstIndex(where: { $0.product.productId == basketItem.product.productId }) {
             Basket.addToBasket(product: wishListItems[index].product)
             wishListItems.remove(at: index)
@@ -105,7 +105,7 @@ class Basket: ObservableObject {
     static func checkStock(product: Product?) -> Int? {
         guard let product = product else { return nil }
 
-        // compare basket contents against stock
+        /// compare basket contents against stock
         guard let stock = product.stock else { return nil }
         if let basketQuantity = items.first(where: { $0.product.productId == product.productId  })?.numberOfItems {
             return stock - basketQuantity
@@ -116,7 +116,7 @@ class Basket: ObservableObject {
 }
 
 
-// Wrapped product to keep track of number of items in the basket. Started as a struct and changed to class as above
+/// Wrapped product to keep track of number of items in the basket. Started as a struct and changed to class as above
 class BasketItem: Hashable {
     static func == (lhs: BasketItem, rhs: BasketItem) -> Bool {
         return lhs.hashValue == rhs.hashValue && lhs.product.name == rhs.product.name && lhs.product.productId == rhs.product.productId 

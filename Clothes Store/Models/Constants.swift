@@ -20,7 +20,7 @@ extension UIColor{
     }
     
     
-// added the two colours below for button styling
+/// added the two colours below for button styling
     class var pressedColour: UIColor{
         return #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     }

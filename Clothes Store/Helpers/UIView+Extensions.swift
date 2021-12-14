@@ -87,24 +87,25 @@ extension UIImage {
     }
 }
 
+
+// Native URL image loader extension
 extension UIImageView {
     func load(url: URL) {
-
         DispatchQueue.global().async { [weak self] in
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 guard let data = data else { return }
-                
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.image = image
                     }
                 }
             }.resume()
-
         }
     }
 }
 
+// Extension for button press effect / animations. There's a bug with the animations as received
+// which is described in the HUD file.
 extension UIButton {
     func buttonPress(label: UILabel? = nil, pressedColour: UIColor) {
         

@@ -9,7 +9,7 @@
 import Foundation
 
 
-// Replaced Alamofire with native URLSession code. 
+/// Replaced Alamofire with native URLSession code.
 
 class DataService {
     
@@ -29,7 +29,7 @@ class DataService {
         URLSession.shared.dataTask(with: url) { jsonData, response, error in
             if let data = jsonData {
                 if let decodedResponse = try? decoder.decode(Products.self, from: data) {
-                    // data received so use main thread to update products
+                    /// data received so use main thread to update products
                     DispatchQueue.main.async {
                         products.products = decodedResponse.products
                     }
@@ -40,7 +40,7 @@ class DataService {
                 completion(products, error)
             }
             
-// So easy to foroget to call resume!
+/// So easy to foroget to call resume!
         }.resume()
     }
 }

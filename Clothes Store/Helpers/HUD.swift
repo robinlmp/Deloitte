@@ -15,7 +15,7 @@ class AnimateMe {
         
         // There's a bug here that if you trigger the animation again before completion.
         // Seems that viewOriginalPosition is set incorrectly. Needs looking at.
-        // Tried a few things.
+        // Tried a few things to fix it but failed.
         
         let viewOriginalPosition = CGRect(x: label.frame.minX, y: label.frame.minY, width: label.frame.width, height: label.frame.height)
 

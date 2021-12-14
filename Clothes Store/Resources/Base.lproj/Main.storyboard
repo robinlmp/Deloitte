@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,7 +17,7 @@
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RG4-05-VOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1787" y="-978"/>
+            <point key="canvasLocation" x="1868" y="-313"/>
         </scene>
         <!--Catalogue-->
         <scene sceneID="hNz-n2-bh7">
@@ -141,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1923.1884057971015" y="-313.39285714285711"/>
+            <point key="canvasLocation" x="1849" y="-1008"/>
         </scene>
         <!--Wishlist-->
         <scene sceneID="wg7-f3-ORb">
@@ -677,8 +676,9 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Yq-bM-oXz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="694"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="25" minY="0.0" maxX="25" maxY="0.0"/>
+                        <color key="sectionIndexBackgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="X1H-9x-J4X">
                                 <cells>
@@ -890,8 +890,8 @@
     <resources>
         <image name="cart" width="15" height="13"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="106"/>
-        <image name="heart.circle" catalog="system" width="128" height="121"/>
         <image name="heart.circle" width="13" height="13"/>
+        <image name="heart.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="photo.placeholder" width="2481" height="2481"/>
