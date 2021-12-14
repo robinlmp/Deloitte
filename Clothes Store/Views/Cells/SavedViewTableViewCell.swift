@@ -39,6 +39,8 @@ class SavedViewTableViewCell: UITableViewCell{
     @IBAction func addToBasket(_ sender: Any) {
         delegate?.addProductToBasket(self)
         
+        /// This button doesn't behave very well. There is no visual feedback when tapped. I'm not sure why my buttonPress method
+        /// is not doing anything. The button works, it just doesn't look like it is.
         addToButton.buttonPress(pressedColour: UIColor.white)
         
         /// Using the product name to identify the product is not ideal. This is a further consequence of my problems

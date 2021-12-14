@@ -86,10 +86,5 @@ class DetailViewContainerViewController: UIViewController {
         Basket.addToWishList(product: product)
         
         wishListButton.buttonPress(label: addedToWishlistLabel, pressedColour: .pressedColourForWhite)
-        
-        
     }
-        
-    
-
 }

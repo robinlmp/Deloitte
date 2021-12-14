@@ -8,6 +8,12 @@
 import UIKit
 import Combine
 
+// I spent most of the time working on this trying to stick to iOS 12 target. As such, I exported SF Symbols
+// as SVGs and added them to Assets. There are some icons where there weren't good matches with the target
+// from the original app. It might be that making custom SF Symbols would be required. This is something
+// I could do but have focussed my efforts on the coding aspects of the app and stuck with SF Symbols that
+// are as close as I could identify.
+
 class TabBarController: UITabBarController {
 
     //Views

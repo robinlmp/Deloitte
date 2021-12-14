@@ -13,11 +13,15 @@ enum URLCall : String {
     case catalogue = "https://api.npoint.io/0f78766a6d68832d309d"
 }
 
+/// This is a basic first step to type safety. It would be nice to get ride of the type casting and in a bigger app you'd
+enum CellStrings: String {
+    case savedCell
+    case basketCell
+    case productCell
+}
+
 enum NavStrings: String {
-    case savedCell = "savedCell"
-    case basketCell = "basketCell"
-    case productCell = "productCell"
-    case detailContainer = "detailContainer"
+    case detailContainer
 }
 
 extension UIColor{

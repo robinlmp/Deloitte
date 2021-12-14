@@ -84,7 +84,7 @@ extension CatalogueViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NavStrings.productCell.rawValue, for: indexPath) as! CatalogueViewCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellStrings.productCell.rawValue, for: indexPath) as! CatalogueViewCollectionViewCell
         
         let product = products[indexPath.row]
         cell.configureWithProduct(product: product)

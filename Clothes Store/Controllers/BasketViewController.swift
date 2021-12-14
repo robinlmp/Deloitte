@@ -75,7 +75,7 @@ extension BasketViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: NavStrings.basketCell.rawValue) as? BasketViewTableViewCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CellStrings.basketCell.rawValue) as? BasketViewTableViewCell
         {
             cell.configureWithProduct(basketItem: Basket.items[indexPath.row])
             return cell
