@@ -37,7 +37,7 @@ class WishlistViewController: UIViewController, BuyCellButtonTapped, UITableView
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "savedCell") as? SavedViewTableViewCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: NavStrings.savedCell.rawValue) as? SavedViewTableViewCell
         {
             cell.configureWithProduct(basketItem: Basket.wishListItems[indexPath.row])
             return cell

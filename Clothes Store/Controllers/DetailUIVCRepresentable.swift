@@ -14,7 +14,7 @@ struct DetailViewController: UIViewControllerRepresentable {
     let product: Product
 
     func makeUIViewController(context: Context) -> DetailViewContainerViewController {
-        let detailVC = UIStoryboard(name: "Main", bundle: nil) .instantiateViewController(withIdentifier: "detailContainer") as! DetailViewContainerViewController
+        let detailVC = UIStoryboard(name: "Main", bundle: nil) .instantiateViewController(withIdentifier: NavStrings.detailContainer.rawValue) as! DetailViewContainerViewController
         detailVC.product = product
         /// This is the background that was added via the extension to help with consistency of presentation when displayed from a SwiftUI view
         detailVC.view.addBackground()

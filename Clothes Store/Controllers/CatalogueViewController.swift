@@ -84,7 +84,7 @@ extension CatalogueViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as! CatalogueViewCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NavStrings.productCell.rawValue, for: indexPath) as! CatalogueViewCollectionViewCell
         
         let product = products[indexPath.row]
         cell.configureWithProduct(product: product)
@@ -100,7 +100,7 @@ extension CatalogueViewController: UICollectionViewDelegate, UICollectionViewDat
 
         let product = products[indexPath.row]
 
-        guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "detailContainer") as? DetailViewContainerViewController else { return }
+        guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: NavStrings.detailContainer.rawValue) as? DetailViewContainerViewController else { return }
         let navigationVC = UINavigationController(rootViewController: detailVC)
         detailVC.product = product
         Haptic.feedBack()

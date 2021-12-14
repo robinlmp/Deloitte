@@ -26,9 +26,7 @@ struct ProductCardView: View {
         ZStack {
             Rectangle()
                 .foregroundColor(.white)
-                .onTapGesture {
-                    sheetShowing = true
-                }
+                
             VStack(spacing: 0) {
                 /// Once I found out I was allowed to change the target iOS version I was umming and arring between
                 /// targetting iOS 14 and 15. I implemented the main URLSession fetch requests when I was working on
@@ -70,6 +68,9 @@ struct ProductCardView: View {
                 DetailViewController(product: product)
             }
 
+        }
+        .onTapGesture {
+            sheetShowing = true
         }
         .frame(maxWidth: 150, maxHeight: 220)
         .clipShape(RoundedRectangle(cornerRadius: 10))

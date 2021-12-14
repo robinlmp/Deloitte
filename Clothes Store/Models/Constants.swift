@@ -13,6 +13,13 @@ enum URLCall : String {
     case catalogue = "https://api.npoint.io/0f78766a6d68832d309d"
 }
 
+enum NavStrings: String {
+    case savedCell = "savedCell"
+    case basketCell = "basketCell"
+    case productCell = "productCell"
+    case detailContainer = "detailContainer"
+}
+
 extension UIColor{
 
     class var primaryColour: UIColor{
