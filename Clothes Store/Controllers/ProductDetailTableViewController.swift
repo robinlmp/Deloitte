@@ -46,6 +46,8 @@ class ProductDetailTableViewController: UITableViewController {
         productOldPrice.attributedText = attributedString
         }
 
+        /// Similar to the problems I've had with getting the tab bar badges to update, the stock numbers and text do update but only when the
+        /// view is forced to reload. I'm not sure why I've not been able to get it to reload. Navigating away and returning it does update.
         productCategory.text = product?.category?.rawValue
         productStockCount.text = "\(stock ?? 0)"
         if (stock ?? 0) > 0 {
@@ -71,7 +73,6 @@ class ProductDetailTableViewController: UITableViewController {
     // MARK: - Table view data source & delegates
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return 4
     }
 

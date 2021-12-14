@@ -37,6 +37,8 @@ struct ProductCardView: View {
                         .scaledToFit()
                 } placeholder: {
                     Image("photo.placeholder")
+                        .resizable()
+                        .scaledToFit()
                 }
                 .padding(8)
                 .padding(.top, 2)
